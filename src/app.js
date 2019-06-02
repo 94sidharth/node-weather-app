@@ -6,6 +6,7 @@ const geocode = require('./utils/geocode.js')
 const forcast = require('./utils/forcast.js')
 
 let app = express();
+const port = process.env.PORT || 3000;
 
 // Define path for express config
 const staticPath = path.join(__dirname, '../public');
@@ -89,6 +90,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
+app.listen(port, () => {
     console.log("Server is up and running")
 })
